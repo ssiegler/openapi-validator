@@ -6,6 +6,7 @@
  *
  * Nested schemas included via `allOf`, `oneOf`, and `anyOf` are validated, but composed schemas
  * are not themselves validated. Nested schemas included via `not` are not validated.
+ *                                                                                    ... by default?
  *
  * @param {object} schema - Simple or composite OpenAPI 3.0 schema object.
  * @param {array} path - Path array for the provided schema.

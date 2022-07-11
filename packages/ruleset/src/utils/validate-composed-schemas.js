@@ -17,7 +17,7 @@ const validateComposedSchemas = (
   schema,
   path,
   validate,
-  includeSelf = true,
+  includeSelf = false,
   includeNot = true
 ) => {
   const errors = [];
@@ -28,7 +28,7 @@ const validateComposedSchemas = (
 
   if (includeNot && schema.not) {
     errors.push(
-      ...validateComposedSchemas(schema.not, [...path, 'not'], validate)
+      ...validateComposedSchemas(schema.not, [...path, 'not'], validate, true)
     );
   }
 
@@ -36,7 +36,7 @@ const validateComposedSchemas = (
     if (Array.isArray(schema[applicatorType])) {
       schema[applicatorType].forEach((s, i) => {
         errors.push(
-          ...validateComposedSchemas(s, [...path, applicatorType, i], validate)
+          ...validateComposedSchemas(s, [...path, applicatorType, i], validate, true)
         );
       });
     }
