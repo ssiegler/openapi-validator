@@ -7,7 +7,9 @@
 // to be re-used by multiple rules.
 
 // A collection of locations of top-level response schemas
-const responseSchemas = ['$.paths[*][*][responses][*].content[*].schema'];
+const responseSchemas = [
+  '$.paths[*][get,put,post,delete,options,head,patch,trace].[responses][*].content[*].schema',
+];
 
 // A collection of locations where a JSON Schema object can be *used*.
 // Note that this does not include "components.schemas" to avoid duplication.
