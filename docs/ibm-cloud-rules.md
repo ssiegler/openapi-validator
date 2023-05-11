@@ -4328,7 +4328,7 @@ paths:
   '/v1/logs':
     post:
       operationId: upload_logfile
-      x-code-gen-request-body-name: log_file   &lt;&lt;&lt;
+      x-codegen-request-body-name: log_file   &lt;&lt;&lt;
       requestBody:
         content:
           'application/octet-stream':
